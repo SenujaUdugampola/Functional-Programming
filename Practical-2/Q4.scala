@@ -14,32 +14,13 @@ def profit(price: Int): Int = {
     revenue(price) - cost(price)
 }
 
-def findBestPrice(startPrice: Int, endPrice: Int, increment: Int): Int = {
-    var bestPrice = startPrice
-    var maxProfit = 0
-
-    var currentPrice:Int = startPrice
-    while (currentPrice <= endPrice) {
-        val currentProfit = profit(currentPrice)
-        if (currentProfit > maxProfit) {
-            maxProfit = currentProfit
-            bestPrice = currentPrice
-        }
-        currentPrice += increment
-    }
-
-    bestPrice
-}
-
 @main def relationship(): Unit = {
-    val startPrice = 5
-    val endPrice = 50
-    val increment = 5
-
-    val bestPrice = findBestPrice(startPrice, endPrice, increment)
-    println(s"The best ticket price to maximize profit is Rs $bestPrice")
-    println("Price\tAttendees\tRevenue\tCost\tProfit")
-    for (price <- startPrice to endPrice by increment) {
-        println(s"$price\t${attendees(price)}\t\t${revenue(price)}\t${cost(price)}\t${profit(price)}")
-    }
+    println("Profit for Rs.5 Ticket : "+profit(5))
+    println("Profit for Rs.10 Ticket : "+profit(10))
+    println("Profit for Rs.15 Ticket : "+profit(15))
+    println("Profit for Rs.20 Ticket : "+profit(20))
+    println("Profit for Rs.25 Ticket : "+profit(25))
+    println("Profit for Rs.30 Ticket : "+profit(30))
+    println("Profit for Rs.35 Ticket : "+profit(35))
+    println("Profit for Rs.40 Ticket : "+profit(40))
 }
